@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<!-- saved from url=(0031)https://www.kreatifkids.web.id/ -->
+<!-- saved from url=(0035)https://www.kreatifkids.web.id/#faq -->
 <html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
 <link href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/css2" rel="stylesheet">
-<link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main.css"><link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main.css"><link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main.css"><style>
+<link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main.css"><link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main.css"><link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main.css"><link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main(1).css"><style>
   :root{
     --paper:#FFF8EA;
     --paper-deep:#FFF1D4;
@@ -555,6 +554,55 @@
     letter-spacing:0.04em;
     text-transform:uppercase;
   }
+
+  .countdown-box{
+    margin:18px 0 22px;
+    padding:16px 14px;
+    background:linear-gradient(135deg, var(--red), var(--red-deep));
+    color:#fff;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 12px 24px -12px rgba(228,56,61,0.65);
+  }
+  .countdown-label{
+    font-size:0.78rem;
+    font-weight:800;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    opacity:0.95;
+  }
+  .countdown-timer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-top:7px;
+    font-family:'Fredoka', sans-serif;
+    font-size:clamp(2rem, 7vw, 3rem);
+    font-weight:700;
+    line-height:1;
+    letter-spacing:0.04em;
+    font-variant-numeric:tabular-nums;
+  }
+  .countdown-unit{
+    display:inline-flex;
+    align-items:baseline;
+    gap:2px;
+  }
+  .countdown-separator{
+    opacity:0.9;
+    transform:translateY(-2px);
+  }
+  .countdown-note{
+    margin-top:7px;
+    font-size:0.75rem;
+    font-weight:600;
+    opacity:0.9;
+  }
+  @media (max-width:480px){
+    .countdown-box{padding:14px 10px;}
+    .countdown-timer{gap:5px;font-size:2rem;}
+  }
   .checkout-body{padding:34px 32px 32px;}
   .checkout-top{
     display:flex;
@@ -816,10 +864,10 @@
         </div>
       </div>
       <div class="fan" aria-hidden="true">
-        <img class="f1" data-cover="hewan" alt="Sampul buku aktivitas anak hewan" src="covers/hewan.webp">
-        <img class="f2" data-cover="berhitung" alt="Sampul buku aktivitas anak berhitung" src="covers/berhitung.webp">
-        <img class="f3" data-cover="dinosaurus" alt="Sampul buku aktivitas anak dinosaurus" src="covers/dinosaurus.webp">
-        <img class="f4" data-cover="buah" alt="Sampul buku aktivitas anak buah" src="covers/buah.webp">
+        <img class="f1" data-cover="hewan" alt="Sampul buku aktivitas anak hewan" src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/hewan.webp">
+        <img class="f2" data-cover="berhitung" alt="Sampul buku aktivitas anak berhitung" src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/berhitung.webp">
+        <img class="f3" data-cover="dinosaurus" alt="Sampul buku aktivitas anak dinosaurus" src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/dinosaurus.webp">
+        <img class="f4" data-cover="buah" alt="Sampul buku aktivitas anak buah" src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/buah.webp">
         <svg class="crayon-deco" viewBox="0 0 100 140" fill="none" xmlns="http://www.w3.org/2000/svg">
           <polygon points="50,0 70,28 30,28" fill="#43A047"></polygon>
           <rect x="30" y="28" width="40" height="100" rx="8" fill="#43A047"></rect>
@@ -831,28 +879,28 @@
   <!-- ================= FEATURES ================= -->
   <section class="features">
     <div class="wrap features-grid">
-      <div class="feature-card reveal">
+      <div class="feature-card reveal in">
         <div class="feature-icon" style="background:rgba(255,90,95,0.14);">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20l3.5-1 10-10a2 2 0 000-3l-.5-.5a2 2 0 00-3 0l-10 10L3 19l1 1z" stroke="#FF5A5F" stroke-width="1.8" stroke-linejoin="round"></path></svg>
         </div>
         <h3>Mewarnai</h3>
         <p>Ilustrasi ramah anak, garis tebal &amp; jelas, mudah diwarnai untuk tangan kecil.</p>
       </div>
-      <div class="feature-card reveal">
+      <div class="feature-card reveal in">
         <div class="feature-icon" style="background:rgba(62,166,224,0.14);">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 19V6M12 6l-4 4M12 6l4 4" stroke="#3EA6E0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 19h14" stroke="#3EA6E0" stroke-width="1.8" stroke-linecap="round"></path></svg>
         </div>
         <h3>Menggambar</h3>
         <p>Halaman tebak &amp; tiru bentuk untuk melatih koordinasi tangan dan mata.</p>
       </div>
-      <div class="feature-card reveal">
+      <div class="feature-card reveal in">
         <div class="feature-icon" style="background:rgba(155,126,222,0.14);">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><text x="2" y="17" font-family="Plus Jakarta Sans" font-weight="800" font-size="14" fill="#9B7EDE">123</text></svg>
         </div>
         <h3>Berhitung</h3>
         <p>Mengenal angka 1–10 lewat karakter hewan &amp; benda yang disukai anak.</p>
       </div>
-      <div class="feature-card reveal">
+      <div class="feature-card reveal in">
         <div class="feature-icon" style="background:rgba(67,160,71,0.14);">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 6a2 2 0 100 4 2 2 0 000-4zM6 14a2 2 0 100 4 2 2 0 000-4zM8 8l10 10M18 6L8 16" stroke="#43A047" stroke-width="1.8" stroke-linecap="round"></path></svg>
         </div>
@@ -865,19 +913,19 @@
   <!-- ================= GRID SEMUA SERI ================= -->
   <section class="grid-section" id="semua-seri">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="section-head reveal in">
         <span class="kicker">Katalog lengkap</span>
         <h2>Semua 12 Seri dalam Satu Paket</h2>
         <p>Semua judul di bawah ini sudah termasuk saat kamu membeli Paketnya — tidak perlu beli satu-satu.</p>
       </div>
-      <div class="series-grid" id="seriesGrid"></div>
+      <div class="series-grid" id="seriesGrid">
     </div>
   </section>
 
   <!-- ================= BENEFITS ================= -->
   <section class="benefits" id="Kelebihan versi digital">
     <div class="wrap benefits-inner">
-      <div class="reveal">
+      <div class="reveal in">
         <span class="kicker">Kenapa versi digital</span>
         <h2 style="margin-bottom:20px;">Lebih Hemat &amp; Lebih Fleksibel dari Buku Fisik</h2>
         <ul class="benefits-list">
@@ -899,8 +947,8 @@
           </li>
         </ul>
       </div>
-      <div class="benefits-art reveal" aria-hidden="true">
-        <img data-cover="profesi" alt="Sampul buku aktivitas anak profesi" src="covers/profesi.webp">
+      <div class="benefits-art reveal in" aria-hidden="true">
+        <img data-cover="profesi" alt="Sampul buku aktivitas anak profesi" src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/profesi.webp">
       </div>
     </div>
   </section>
@@ -908,15 +956,26 @@
   <!-- ================= CHECKOUT ================= -->
   <section class="checkout-section" id="beli">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="section-head reveal in">
         <span class="kicker">Penawaran terbatas</span>
         <h2>Ambil Semua 12 Seri Sekaligus</h2>
         <p>Satu kali bayar, dapat 12 seri lengkap. Lebih hemat dibanding beli satuan.</p>
       </div>
 
-      <div class="checkout-card reveal">
+      <div class="checkout-card reveal in">
         <div class="checkout-banner">🎉 Hemat 70% — Harga Paket Hari Ini</div>
         <div class="checkout-body">
+          <div class="countdown-box" aria-live="polite">
+            <div class="countdown-label">⏰ Promo berakhir dalam</div>
+            <div class="countdown-timer" id="countdownTimer" role="timer" aria-label="Waktu promo tersisa">
+              <span class="countdown-unit"><span id="cdHours">24</span><small>j</small></span>
+              <span class="countdown-separator">:</span>
+              <span class="countdown-unit"><span id="cdMinutes">00</span><small>m</small></span>
+              <span class="countdown-separator">:</span>
+              <span class="countdown-unit"><span id="cdSeconds">00</span><small>d</small></span>
+            </div>
+            <div class="countdown-note">Timer dimulai ulang 24 jam setiap kali halaman dibuka.</div>
+          </div>
           <div class="checkout-top">
             <div>
               <div class="checkout-title">Paket Lengkap 12 Seri</div>
@@ -925,7 +984,7 @@
             <div class="badge-discount">DISKON 70%</div>
           </div>
 
-          <ul class="checkout-list" id="checkoutList"></ul>
+          <ul class="checkout-list" id="checkoutList"><li><span class="mini-check"><svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Seri Benda di Sekitar Kita</li><li><span class="mini-check"><svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Seri Berhitung</li><li><span class="mini-check"><svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Seri Buah-buahan</li><li><span class="mini-check"><svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Seri Dinosaurus</li><li><span class="mini-check"><svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Seri Hewan</li><li><span class="mini-check"><svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Seri Huruf (Alphabet)</li><li><span class="mini-check"><svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Seri Kendaraan</li><li><span class="mini-check"><svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Seri Mengenal Anggota Tubuh</li><li><span class="mini-check"><svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Seri Mengenal Tempat</li><li><span class="mini-check"><svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Seri Mengenal Waktu</li><li><span class="mini-check"><svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Seri Profesi</li><li><span class="mini-check"><svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Seri Sayur-sayuran</li></ul>
 
           <p class="checkout-bonus">🎁 Bonus: Template excel rencana tabungan pendidikan anak, modul matematika (Kumon), Mewarnai Dinosaurus, Gambar ilustrasi</p>
 
@@ -953,34 +1012,34 @@
   <!-- ================= FAQ ================= -->
   <section class="faq-section" id="faq">
     <div class="wrap">
-      <div class="section-head reveal">
+      <div class="section-head reveal in">
         <span class="kicker">Pertanyaan umum</span>
         <h2>Masih Ada yang Ingin Ditanyakan?</h2>
       </div>
       <div class="faq-list">
-        <details class="reveal">
+        <details class="reveal in">
           <summary>Produk ini file apa, dan bagaimana cara pakainya? <span class="plus">+</span></summary>
           <p>Paket berisi 12 file PDF (satu per seri) beresolusi tinggi yang bisa langsung dicetak sendiri di rumah atau di tempat foto copy, menggunakan kertas HVS atau kertas gambar ukuran A4.</p>
         </details>
-        <details class="reveal">
+        <details class="reveal in">
           <summary>Boleh dicetak berkali-kali? <span class="plus">+</span></summary>
           <p>Boleh. File PDF-nya bisa dicetak ulang sebanyak yang dibutuhkan untuk penggunaan pribadi/keluarga, jadi kalau halaman aktivitas habis atau anak ingin mengulang, tinggal cetak lagi.</p>
         </details>
-        <details class="reveal">
+        <details class="reveal in">
           <summary>Cocok untuk usia berapa? <span class="plus">+</span></summary>
           <p>Seluruh 12 seri dirancang untuk anak usia 3–7 tahun, dengan tingkat kesulitan aktivitas yang bertahap sehingga bisa mengikuti perkembangan anak.</p>
         </details>
-        <details class="reveal">
+        <details class="reveal in">
           <summary>Setelah bayar, bagaimana cara saya menerima filenya? <span class="plus">+</span></summary>
           <p>Setelah pembayaran dikonfirmasi, tautan unduhan seluruh 12 seri akan dikirimkan ke email atau WhatsApp yang kamu gunakan saat checkout.</p>
         </details>
-        <details class="reveal">
+        <details class="reveal in">
           <summary>Apakah 12 seri ini dijual terpisah juga? <span class="plus">+</span></summary>
           <p>Harga Rp150.000 adalah total harga bila 12 seri dibeli satuan. Melalui penawaran Paket ini, seluruh 12 seri didapat sekaligus seharga Rp45.000.</p>
         </details>
       </div>
 
-      <div class="final-cta reveal" style="margin-top:40px;">
+      <div class="final-cta reveal in" style="margin-top:40px;">
         <a href="https://www.kreatifkids.web.id/#beli" class="btn btn-primary">Beli Paket Sekarang — Rp45.000</a>
       </div>
     </div>
@@ -1095,6 +1154,33 @@ document.getElementById('ctaButton').setAttribute('href', CHECKOUT_URL);
 document.getElementById('ctaButton').setAttribute('target', '_blank');
 document.getElementById('ctaButton').setAttribute('rel', 'noopener');
 
+// ---- countdown 24 jam: restart setiap kali halaman dibuka/di-refresh ----
+// Sengaja tidak memakai localStorage/sessionStorage agar setiap page load dimulai dari 24:00:00.
+const COUNTDOWN_DURATION = 24 * 60 * 60 * 1000;
+const countdownEnd = Date.now() + COUNTDOWN_DURATION;
+const cdHours = document.getElementById('cdHours');
+const cdMinutes = document.getElementById('cdMinutes');
+const cdSeconds = document.getElementById('cdSeconds');
+
+function updateCountdown(){
+  const remaining = Math.max(0, countdownEnd - Date.now());
+  const totalSeconds = Math.floor(remaining / 1000);
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  cdHours.textContent = String(hours).padStart(2, '0');
+  cdMinutes.textContent = String(minutes).padStart(2, '0');
+  cdSeconds.textContent = String(seconds).padStart(2, '0');
+
+  if(remaining <= 0){
+    clearInterval(countdownInterval);
+  }
+}
+
+updateCountdown();
+const countdownInterval = setInterval(updateCountdown, 1000);
+
 // ---- scroll reveal ----
 const io = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
@@ -1105,4 +1191,5 @@ document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
 </script>
 
 
-<deepl-input-controller translate="no"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://cofdbpoegempjloogbagkncekinflcnj/build/content.css"><div dir="ltr" style="visibility: initial !important;"><div class="dl-input-translation-container svelte-95aucy"><div></div></div></div></template></deepl-input-controller></body></html>
+<deepl-input-controller translate="no"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://cofdbpoegempjloogbagkncekinflcnj/build/content.css"><div dir="ltr" style="visibility: initial !important;"><div class="dl-input-translation-container svelte-95aucy"><div></div></div></div></template></deepl-input-controller>
+</body></html>
