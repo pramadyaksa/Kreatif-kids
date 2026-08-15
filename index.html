@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<!-- saved from url=(0036)https://www.kreatifkids.web.id/#beli -->
+<!-- saved from url=(0051)file:///C:/Users/Rengg/Downloads/kreatifkids_3.html -->
 <html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +7,8 @@
 <meta name="description" content="Paket digital 12 seri buku aktivitas anak: mewarnai, menggambar, berhitung, menggunting &amp; menempel. Cocok usia 3–7 tahun. Sekarang Rp45.000, dari Rp150.000.">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/css2" rel="stylesheet">
-<link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main.css"><link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main.css"><link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main.css"><link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main(1).css"><link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main(2).css"><link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main(3).css"><link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main(4).css"><link rel="stylesheet" crossorigin="anonymous" href="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/main(5).css"><style>
+<link href="file:///C:/Users/Rengg/Downloads/Kreatif.Kids%20%E2%80%94%2012%20Seri%20Buku%20Aktivitas%20Anak%20(Menggambar,%20Berhitung%20&amp;%20Mewarnai)_files/css2" rel="stylesheet">
+<link rel="stylesheet" crossorigin="anonymous" href="file:///C:/Users/Rengg/Downloads/Kreatif.Kids%20%E2%80%94%2012%20Seri%20Buku%20Aktivitas%20Anak%20(Menggambar,%20Berhitung%20&amp;%20Mewarnai)_files/main.css"><link rel="stylesheet" crossorigin="anonymous" href="file:///C:/Users/Rengg/Downloads/Kreatif.Kids%20%E2%80%94%2012%20Seri%20Buku%20Aktivitas%20Anak%20(Menggambar,%20Berhitung%20&amp;%20Mewarnai)_files/main.css"><link rel="stylesheet" crossorigin="anonymous" href="file:///C:/Users/Rengg/Downloads/Kreatif.Kids%20%E2%80%94%2012%20Seri%20Buku%20Aktivitas%20Anak%20(Menggambar,%20Berhitung%20&amp;%20Mewarnai)_files/main.css"><link rel="stylesheet" crossorigin="anonymous" href="file:///C:/Users/Rengg/Downloads/Kreatif.Kids%20%E2%80%94%2012%20Seri%20Buku%20Aktivitas%20Anak%20(Menggambar,%20Berhitung%20&amp;%20Mewarnai)_files/main(1).css"><link rel="stylesheet" crossorigin="anonymous" href="file:///C:/Users/Rengg/Downloads/Kreatif.Kids%20%E2%80%94%2012%20Seri%20Buku%20Aktivitas%20Anak%20(Menggambar,%20Berhitung%20&amp;%20Mewarnai)_files/main(2).css"><link rel="stylesheet" crossorigin="anonymous" href="file:///C:/Users/Rengg/Downloads/Kreatif.Kids%20%E2%80%94%2012%20Seri%20Buku%20Aktivitas%20Anak%20(Menggambar,%20Berhitung%20&amp;%20Mewarnai)_files/main(3).css"><link rel="stylesheet" crossorigin="anonymous" href="file:///C:/Users/Rengg/Downloads/Kreatif.Kids%20%E2%80%94%2012%20Seri%20Buku%20Aktivitas%20Anak%20(Menggambar,%20Berhitung%20&amp;%20Mewarnai)_files/main(4).css"><link rel="stylesheet" crossorigin="anonymous" href="file:///C:/Users/Rengg/Downloads/Kreatif.Kids%20%E2%80%94%2012%20Seri%20Buku%20Aktivitas%20Anak%20(Menggambar,%20Berhitung%20&amp;%20Mewarnai)_files/main(5).css"><style>
   :root{
     --paper:#FFF8EA;
     --paper-deep:#FFF1D4;
@@ -228,35 +227,38 @@
   }
   .hero-trust span{display:flex;align-items:center;gap:6px;}
 
-  /* fanned covers */
+  /* single flyer image (replaces the old 4-image fan) */
   .fan{
     position:relative;
     height:420px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
-  .fan img{
-    position:absolute;
-    width:190px;
+  .fan img.flyer{
+    position:relative;
+    width:330px;
+    max-width:100%;
     border-radius:16px;
     box-shadow:var(--shadow-soft);
     border:6px solid #fff;
+    transform:rotate(-3deg);
     transition:transform .35s ease, box-shadow .35s ease;
+    z-index:2;
   }
-  .fan img:hover{transform:translateY(-10px) scale(1.03) !important; z-index:10;}
-  .fan .f1{ left:2%; top:8%; transform:rotate(-11deg); z-index:1;}
-  .fan .f2{ left:30%; top:0%; transform:rotate(4deg); z-index:2;}
-  .fan .f3{ left:56%; top:10%; transform:rotate(-4deg); z-index:3;}
-  .fan .f4{ left:38%; top:34%; transform:rotate(13deg); z-index:4;}
+  .fan img.flyer:hover{transform:rotate(0deg) scale(1.03); z-index:10;}
   .crayon-deco{
     position:absolute;
     bottom:-6px; right:-18px;
     width:120px;
     opacity:0.9;
     transform:rotate(8deg);
+    z-index:1;
   }
   @media (max-width:900px){
     .hero-inner{grid-template-columns:1fr;}
     .fan{height:320px; margin-top:10px;}
-    .fan img{width:150px;}
+    .fan img.flyer{width:230px;}
   }
 
   /* ================= FEATURES STRIP ================= */
@@ -871,10 +873,7 @@
         </div>
       </div>
       <div class="fan" aria-hidden="true">
-        <img class="f1" data-cover="hewan" alt="Sampul buku aktivitas anak hewan" src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/hewan.webp">
-        <img class="f2" data-cover="berhitung" alt="Sampul buku aktivitas anak berhitung" src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/berhitung.webp">
-        <img class="f3" data-cover="dinosaurus" alt="Sampul buku aktivitas anak dinosaurus" src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/dinosaurus.webp">
-        <img class="f4" data-cover="buah" alt="Sampul buku aktivitas anak buah" src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/buah.webp">
+        <img class="flyer" alt="Flyer promosi Paket Lengkap 12 Seri Worksheet Aktivitas Anak Kreatif.Kids" src="file:///C:/Users/Rengg/Downloads/covers/flyer-promo.webp">
         <svg class="crayon-deco" viewBox="0 0 100 140" fill="none" xmlns="http://www.w3.org/2000/svg">
           <polygon points="50,0 70,28 30,28" fill="#43A047"></polygon>
           <rect x="30" y="28" width="40" height="100" rx="8" fill="#43A047"></rect>
@@ -895,7 +894,7 @@
       </div>
       <div class="feature-card reveal in">
         <div class="feature-icon" style="background:rgba(62,166,224,0.14);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3.5 20.5c-1.2-.4-1.8-1.7-1.4-3l.4-1.6c.3-1.3 1.6-2.1 2.9-1.7.6.1 1 .5 1.4 1l.5.8" stroke="#3EA6E0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.3 15.2l4-4" stroke="#3EA6E0" stroke-width="1.7" stroke-linecap="round"></path><path d="M7.5 17.5l8.7-8.7a1.6 1.6 0 000-2.3l-.7-.7a1.6 1.6 0 00-2.3 0L4.5 14.5" stroke="#3EA6E0" stroke-width="1.7" stroke-linejoin="round"></path><path d="M20 20.5c-2.3 1.3-3-2.3-5 .5" stroke="#3EA6E0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 19V6M12 6l-4 4M12 6l4 4" stroke="#3EA6E0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 19h14" stroke="#3EA6E0" stroke-width="1.8" stroke-linecap="round"></path></svg>
         </div>
         <h3>Menggambar</h3>
         <p>Halaman tebak &amp; tiru bentuk untuk melatih koordinasi tangan dan mata.</p>
@@ -925,67 +924,7 @@
         <h2>Semua 12 Seri dalam Satu Paket</h2>
         <p>Semua judul di bawah ini sudah termasuk saat kamu membeli Paketnya — tidak perlu beli satu-satu.</p>
       </div>
-      <div class="series-grid" id="seriesGrid"><div class="series-card reveal in">
-    <img src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/benda.webp" alt="Sampul Seri Benda di Sekitar Kita" loading="lazy">
-    <div class="series-card-body">
-      <div class="series-card-index">SERI 01</div>
-      <h3>Seri Benda di Sekitar Kita</h3>
-    </div></div><div class="series-card reveal in">
-    <img src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/berhitung(1).webp" alt="Sampul Seri Berhitung" loading="lazy">
-    <div class="series-card-body">
-      <div class="series-card-index">SERI 02</div>
-      <h3>Seri Berhitung</h3>
-    </div></div><div class="series-card reveal in">
-    <img src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/buah(1).webp" alt="Sampul Seri Buah-buahan" loading="lazy">
-    <div class="series-card-body">
-      <div class="series-card-index">SERI 03</div>
-      <h3>Seri Buah-buahan</h3>
-    </div></div><div class="series-card reveal in">
-    <img src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/dinosaurus(1).webp" alt="Sampul Seri Dinosaurus" loading="lazy">
-    <div class="series-card-body">
-      <div class="series-card-index">SERI 04</div>
-      <h3>Seri Dinosaurus</h3>
-    </div></div><div class="series-card reveal in">
-    <img src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/hewan(1).webp" alt="Sampul Seri Hewan" loading="lazy">
-    <div class="series-card-body">
-      <div class="series-card-index">SERI 05</div>
-      <h3>Seri Hewan</h3>
-    </div></div><div class="series-card reveal in">
-    <img src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/huruf.webp" alt="Sampul Seri Huruf (Alphabet)" loading="lazy">
-    <div class="series-card-body">
-      <div class="series-card-index">SERI 06</div>
-      <h3>Seri Huruf (Alphabet)</h3>
-    </div></div><div class="series-card reveal in">
-    <img src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/kendaraan.webp" alt="Sampul Seri Kendaraan" loading="lazy">
-    <div class="series-card-body">
-      <div class="series-card-index">SERI 07</div>
-      <h3>Seri Kendaraan</h3>
-    </div></div><div class="series-card reveal in">
-    <img src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/tubuh.webp" alt="Sampul Seri Mengenal Anggota Tubuh" loading="lazy">
-    <div class="series-card-body">
-      <div class="series-card-index">SERI 08</div>
-      <h3>Seri Mengenal Anggota Tubuh</h3>
-    </div></div><div class="series-card reveal in">
-    <img src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/tempat.webp" alt="Sampul Seri Mengenal Tempat" loading="lazy">
-    <div class="series-card-body">
-      <div class="series-card-index">SERI 09</div>
-      <h3>Seri Mengenal Tempat</h3>
-    </div></div><div class="series-card reveal in">
-    <img src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/waktu.webp" alt="Sampul Seri Mengenal Waktu" loading="lazy">
-    <div class="series-card-body">
-      <div class="series-card-index">SERI 10</div>
-      <h3>Seri Mengenal Waktu</h3>
-    </div></div><div class="series-card reveal in">
-    <img src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/profesi.webp" alt="Sampul Seri Profesi" loading="lazy">
-    <div class="series-card-body">
-      <div class="series-card-index">SERI 11</div>
-      <h3>Seri Profesi</h3>
-    </div></div><div class="series-card reveal in">
-    <img src="./Kreatif.Kids — 12 Seri Buku Aktivitas Anak (Menggambar, Berhitung &amp; Mewarnai)_files/sayur.webp" alt="Sampul Seri Sayur-sayuran" loading="lazy">
-    <div class="series-card-body">
-      <div class="series-card-index">SERI 12</div>
-      <h3>Seri Sayur-sayuran</h3>
-    </div></div></div>
+      <div class="series-grid" id="seriesGrid"></div>
     </div>
   </section>
 
@@ -1021,7 +960,7 @@
               <span class="countdown-separator">:</span>
               <span class="countdown-unit"><span id="cdMinutes">59</span><small>m</small></span>
               <span class="countdown-separator">:</span>
-              <span class="countdown-unit"><span id="cdSeconds">28</span><small>d</small></span>
+              <span class="countdown-unit"><span id="cdSeconds">39</span><small>d</small></span>
             </div>
             <div class="countdown-note"></div>
           </div>
@@ -1161,7 +1100,7 @@ document.querySelectorAll('img[data-cover]').forEach(img=>{
 
 // ---- build full grid ----
 const grid = document.getElementById('seriesGrid');
-grid.innerHTML = ''; // pastikan tidak ada kartu ganda jika script sempat berjalan lebih dari sekali
+grid.innerHTML = ''; // pastikan tidak ada kartu seri ganda jika script sempat berjalan lebih dari sekali
 SERIES.forEach(s=>{
   const card = document.createElement('div');
   card.className = 'series-card reveal';
