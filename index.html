@@ -23,7 +23,7 @@
 <meta name="twitter:title" content="Worksheet Aktivitas Anak PDF | 12 Seri Mewarnai, Menggambar &amp; Berhitung">
 <meta name="twitter:description" content="Paket 12 seri worksheet aktivitas anak PDF untuk usia 3–7 tahun, lengkap dengan bonus materi edukasi.">
 
-<script type="application/ld+json">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Cw9kM7ckyAM9rz7llS2Vgy_lb3fd9nimyPU3zaKgtqnM3ZScR3zVn-UiRMIouRenaUCKoYfGPDV_Yk9737yjBw" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly93d3cua3JlYXRpZmtpZHMud2ViLmlkLw"/><script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Product",
@@ -256,8 +256,8 @@
   }
   .hero-inner{
     display:grid;
-    grid-template-columns:1.05fr 0.95fr;
-    gap:48px;
+    grid-template-columns:minmax(0,0.86fr) minmax(360px,1.14fr);
+    gap:42px;
     align-items:center;
   }
   .eyebrow{
@@ -327,38 +327,67 @@
   }
   .hero-trust span{display:flex;align-items:center;gap:6px;}
 
-  /* single flyer image (replaces the old 4-image fan) */
+  /* single flyer image — enlarged for maximum readability */
   .fan{
     position:relative;
-    height:420px;
+    min-height:560px;
     display:flex;
     align-items:center;
     justify-content:center;
+    padding:18px 12px;
+  }
+  .fan::before{
+    content:"";
+    position:absolute;
+    width:min(430px,88%);
+    height:min(520px,92%);
+    border-radius:34px;
+    background:rgba(255,255,255,0.48);
+    border:2px solid rgba(255,255,255,0.72);
+    box-shadow:0 24px 50px -28px rgba(34,49,92,0.30);
+    transform:rotate(3deg);
+    z-index:0;
   }
   .fan img.flyer{
     position:relative;
-    width:330px;
-    max-width:100%;
-    border-radius:16px;
-    box-shadow:var(--shadow-soft);
-    border:6px solid #fff;
-    transform:rotate(-3deg);
+    width:clamp(390px, 34vw, 500px);
+    max-width:92%;
+    max-height:540px;
+    height:auto;
+    object-fit:contain;
+    border-radius:22px;
+    box-shadow:0 28px 54px -24px rgba(34,49,92,0.42);
+    border:8px solid #fff;
+    transform:rotate(-1.5deg);
     transition:transform .35s ease, box-shadow .35s ease;
     z-index:2;
   }
-  .fan img.flyer:hover{transform:rotate(0deg) scale(1.03); z-index:10;}
+  .fan img.flyer:hover{transform:rotate(0deg) scale(1.025); z-index:10; box-shadow:0 34px 62px -24px rgba(34,49,92,0.48);}
   .crayon-deco{
     position:absolute;
-    bottom:-6px; right:-18px;
-    width:120px;
+    bottom:4px; right:-2px;
+    width:110px;
     opacity:0.9;
     transform:rotate(8deg);
-    z-index:1;
+    z-index:3;
+  }
+  @media (max-width:1100px){
+    .hero-inner{grid-template-columns:minmax(0,0.9fr) minmax(330px,1.1fr); gap:30px;}
+    .fan{min-height:520px;}
+    .fan img.flyer{width:clamp(350px, 36vw, 440px);}
   }
   @media (max-width:900px){
-    .hero-inner{grid-template-columns:1fr;}
-    .fan{height:320px; margin-top:10px;}
-    .fan img.flyer{width:230px;}
+    .hero-inner{grid-template-columns:1fr; text-align:left;}
+    .fan{min-height:500px; margin-top:14px; padding:10px 0 18px;}
+    .fan::before{width:min(340px,86%); height:min(430px,92%);}
+    .fan img.flyer{width:min(360px,88vw); max-height:none;}
+    .crayon-deco{width:86px; right:2px; bottom:0;}
+  }
+  @media (max-width:520px){
+    .fan{min-height:430px;}
+    .fan::before{width:78%; height:88%; border-radius:28px;}
+    .fan img.flyer{width:min(320px,86vw); border-width:6px; border-radius:18px;}
+    .crayon-deco{width:66px; right:0;}
   }
 
   /* ================= FEATURES STRIP ================= */
