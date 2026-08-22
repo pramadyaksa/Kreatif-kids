@@ -1146,8 +1146,8 @@
       <div class="bonus-block reveal in">
         <div class="section-head" style="margin-top:0;">
           <span class="kicker">Bonus tambahan</span>
-          <h2>Selain 12 seri worksheet utama, kamu juga dapat bonus tambahan ini secara gratis:</h2>
-          <p>🎁 Bonus: ● Excel template budget pendidikan anak ● Kumpulan cerita animasi anak ● Modul matematika ● Sheet mewarnai ● Gambar ilustrasi ● Modul workbook & worksheet for preschool (PAUD) English version</p>
+          <h2>BONUS!!!</h2>
+          <p>Selain 12 seri worksheet utama, kamu juga dapat bonus tambahan ini secara gratis:</p>
         </div>
         <div class="bonus-carousel-wrap">
           <div class="series-carousel" data-carousel="bonus" aria-label="Carousel Bonus Tambahan">
@@ -1157,19 +1157,19 @@
                   <img src="bonus/bonus-01.webp" alt="Bonus Excel Planner Biaya Pendidikan Anak" loading="lazy" decoding="async">
                 </div>
                 <div class="series-carousel-slide" aria-hidden="true">
-                  <img src="bonus/bonus-02.webp" alt="Bonus Koleksi Cerita Animasi Anak Template Canva" loading="lazy" decoding="async">
+                  <img data-src="bonus/bonus-02.webp" alt="Bonus Koleksi Cerita Animasi Anak Template Canva" loading="lazy" decoding="async">
                 </div>
                 <div class="series-carousel-slide" aria-hidden="true">
-                  <img src="bonus/bonus-03.webp" alt="Bonus Modul Matematika Kumon Series English Version" loading="lazy" decoding="async">
+                  <img data-src="bonus/bonus-03.webp" alt="Bonus Modul Matematika Kumon Series English Version" loading="lazy" decoding="async">
                 </div>
                 <div class="series-carousel-slide" aria-hidden="true">
-                  <img src="bonus/bonus-04.webp" alt="Bonus Worksheet Koleksi Mewarnai" loading="lazy" decoding="async">
+                  <img data-src="bonus/bonus-04.webp" alt="Bonus Worksheet Koleksi Mewarnai" loading="lazy" decoding="async">
                 </div>
                 <div class="series-carousel-slide" aria-hidden="true">
-                  <img src="bonus/bonus-05.webp" alt="Bonus Gambar Ilustrasi Berwarna" loading="lazy" decoding="async">
+                  <img data-src="bonus/bonus-05.webp" alt="Bonus Gambar Ilustrasi Berwarna" loading="lazy" decoding="async">
                 </div>
                 <div class="series-carousel-slide" aria-hidden="true">
-                  <img src="bonus/bonus-06.webp" alt="Bonus Modul Workbook Worksheet for Preschool PAUD" loading="lazy" decoding="async">
+                  <img data-src="bonus/bonus-06.webp" alt="Bonus Modul Workbook Worksheet for Preschool PAUD" loading="lazy" decoding="async">
                 </div>
               </div>
               <button class="series-carousel-btn prev" type="button" aria-label="Gambar sebelumnya">‹</button>
@@ -1545,7 +1545,7 @@ SERIES.forEach(s=>{
     const carouselKey = `seri${String(s.num).padStart(2, '0')}`;
     const slides = previews.map((item, idx)=>`
       <div class="series-carousel-slide" aria-hidden="${idx === 0 ? 'false' : 'true'}">
-        <img src="${item.src}" alt="${item.alt}" loading="${(idx === 0 && s.num === 1) ? 'eager' : 'lazy'}" decoding="async">
+        <img ${idx === 0 ? `src="${item.src}"` : `data-src="${item.src}"`} alt="${item.alt}" loading="${(idx === 0 && s.num === 1) ? 'eager' : 'lazy'}" decoding="async">
       </div>
     `).join('');
     const dots = previews.map((_, idx)=>`
@@ -1593,11 +1593,25 @@ document.querySelectorAll('.series-carousel').forEach(carousel=>{
   let index = 0;
   let timer = null;
 
+  // Muat gambar slide hanya saat dibutuhkan (src asli disimpan di data-src).
+  // Sebelumnya seluruh 5-6 gambar tiap carousel langsung dipasang src-nya,
+  // jadi begitu carousel masuk area lazy-load browser, semuanya ikut kebawa
+  // padahal cuma 1 yang tampil -> ini penyebab utama grid-section terasa berat.
+  const loadSlide = (i)=>{
+    const img = slides[i] && slides[i].querySelector('img');
+    if(img && img.dataset.src){
+      img.src = img.dataset.src;
+      delete img.dataset.src;
+    }
+  };
+
   const render = (nextIndex)=>{
     index = (nextIndex + slides.length) % slides.length;
     track.style.transform = `translateX(-${index * 100}%)`;
     slides.forEach((slide,i)=>slide.setAttribute('aria-hidden', i === index ? 'false' : 'true'));
     dots.forEach((dot,i)=>dot.classList.toggle('active', i === index));
+    loadSlide(index);
+    loadSlide((index + 1) % slides.length); // preload 1 slide di depan biar transisi mulus
   };
 
   const stop = ()=>{ if(timer){ clearInterval(timer); timer=null; } };
@@ -1627,7 +1641,13 @@ document.querySelectorAll('.series-carousel').forEach(carousel=>{
   // dan otomatis berhenti saat di-scroll lewat -> hemat CPU/baterai di HP.
   const carouselVisibility = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
-      if(entry.isIntersecting){ start(); } else { stop(); }
+      if(entry.isIntersecting){
+        loadSlide(index);
+        loadSlide((index + 1) % slides.length);
+        start();
+      } else {
+        stop();
+      }
     });
   }, {threshold:0.3});
   carouselVisibility.observe(carousel);
