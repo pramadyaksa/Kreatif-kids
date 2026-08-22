@@ -612,6 +612,29 @@
     .series-grid{grid-template-columns:repeat(2,1fr);}
   }
 
+  /* ================= BONUS CAROUSEL (1 kotak, di bawah series-grid) ================= */
+  .bonus-block{margin-top:56px;}
+  .bonus-carousel-wrap{
+    max-width:380px;
+    margin:0 auto;
+  }
+  .bonus-carousel-wrap .series-carousel{
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow-card);
+    border:2px solid rgba(34,49,92,0.06);
+    transition:transform .22s ease, box-shadow .22s ease;
+  }
+  .bonus-carousel-wrap .series-carousel:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow-soft);
+  }
+  .bonus-carousel-wrap .series-carousel-viewport{
+    aspect-ratio:2/3;
+  }
+  @media (max-width:480px){
+    .bonus-carousel-wrap{max-width:300px;}
+  }
+
   /* ================= BENEFITS ================= */
   .benefits{
     padding:70px 0;
@@ -1118,6 +1141,52 @@
         <p>Berikut ini adalah item yang akan anda dapatkan ketika membeli Worksheet di Kreatif kids :</p>
       </div>
       <div class="series-grid" id="seriesGrid"></div>
+
+      <!-- ================= BONUS CAROUSEL ================= -->
+      <div class="bonus-block reveal in">
+        <div class="section-head" style="margin-top:0;">
+          <span class="kicker">Bonus tambahan</span>
+          <h2>BONUS!!!</h2>
+          <p>Selain 12 seri worksheet utama, kamu juga dapat bonus tambahan ini secara gratis:</p>
+        </div>
+        <div class="bonus-carousel-wrap">
+          <div class="series-carousel" data-carousel="bonus" aria-label="Carousel Bonus Tambahan">
+            <div class="series-carousel-viewport">
+              <div class="series-carousel-track">
+                <div class="series-carousel-slide" aria-hidden="false">
+                  <img src="bonus/bonus-01.webp" alt="Bonus Excel Planner Biaya Pendidikan Anak" loading="lazy" decoding="async">
+                </div>
+                <div class="series-carousel-slide" aria-hidden="true">
+                  <img src="bonus/bonus-02.webp" alt="Bonus Koleksi Cerita Animasi Anak Template Canva" loading="lazy" decoding="async">
+                </div>
+                <div class="series-carousel-slide" aria-hidden="true">
+                  <img src="bonus/bonus-03.webp" alt="Bonus Modul Matematika Kumon Series English Version" loading="lazy" decoding="async">
+                </div>
+                <div class="series-carousel-slide" aria-hidden="true">
+                  <img src="bonus/bonus-04.webp" alt="Bonus Worksheet Koleksi Mewarnai" loading="lazy" decoding="async">
+                </div>
+                <div class="series-carousel-slide" aria-hidden="true">
+                  <img src="bonus/bonus-05.webp" alt="Bonus Gambar Ilustrasi Berwarna" loading="lazy" decoding="async">
+                </div>
+                <div class="series-carousel-slide" aria-hidden="true">
+                  <img src="bonus/bonus-06.webp" alt="Bonus Modul Workbook Worksheet for Preschool PAUD" loading="lazy" decoding="async">
+                </div>
+              </div>
+              <button class="series-carousel-btn prev" type="button" aria-label="Gambar sebelumnya">‹</button>
+              <button class="series-carousel-btn next" type="button" aria-label="Gambar berikutnya">›</button>
+              <div class="series-carousel-caption">Bonus · Preview</div>
+              <div class="series-carousel-dots">
+                <button class="series-carousel-dot active" type="button" aria-label="Tampilkan gambar 1 dari 6" data-slide="0"></button>
+                <button class="series-carousel-dot" type="button" aria-label="Tampilkan gambar 2 dari 6" data-slide="1"></button>
+                <button class="series-carousel-dot" type="button" aria-label="Tampilkan gambar 3 dari 6" data-slide="2"></button>
+                <button class="series-carousel-dot" type="button" aria-label="Tampilkan gambar 4 dari 6" data-slide="3"></button>
+                <button class="series-carousel-dot" type="button" aria-label="Tampilkan gambar 5 dari 6" data-slide="4"></button>
+                <button class="series-carousel-dot" type="button" aria-label="Tampilkan gambar 6 dari 6" data-slide="5"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
