@@ -1044,6 +1044,87 @@
     text-align:center;
     margin-top:6px;
   }
+
+  /* ---------- sale toast: notifikasi "baru saja membeli" ---------- */
+  .sale-toast{
+    position:fixed;
+    left:18px;
+    bottom:calc(18px + env(safe-area-inset-bottom));
+    z-index:60;
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    width:320px;
+    max-width:calc(100% - 36px);
+    background:var(--card);
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow-card);
+    padding:14px 16px;
+    cursor:pointer;
+    transform:translateY(24px);
+    opacity:0;
+    pointer-events:none;
+    transition:transform .45s cubic-bezier(.22,1,.36,1), opacity .35s ease;
+  }
+  .sale-toast.show{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+  .sale-toast:focus-visible{
+    outline:3px solid var(--blue);
+    outline-offset:3px;
+  }
+  .sale-toast-avatar{
+    flex:none;
+    width:40px;height:40px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:0.95rem;
+    color:#fff;
+  }
+  .sale-toast-body{flex:1;min-width:0;}
+  .sale-toast-name{
+    display:flex;align-items:center;gap:6px;
+    font-weight:700;
+    font-size:0.9rem;
+    color:var(--ink);
+  }
+  .sale-toast-name .mini-check{
+    flex:none;width:14px;height:14px;border-radius:50%;
+    background:var(--green);
+    display:inline-flex;align-items:center;justify-content:center;
+  }
+  .sale-toast-text{
+    font-size:0.8rem;
+    color:var(--ink-soft);
+    margin-top:2px;
+    line-height:1.35;
+  }
+  .sale-toast-time{
+    font-size:0.72rem;
+    color:var(--ink-soft);
+    opacity:0.7;
+    margin-top:4px;
+  }
+  .sale-toast-close{
+    flex:none;
+    width:22px;height:22px;
+    border-radius:50%;
+    border:none;
+    background:rgba(34,49,92,0.08);
+    color:var(--ink-soft);
+    font-size:0.8rem;
+    line-height:1;
+    display:flex;align-items:center;justify-content:center;
+    padding:0;
+  }
+  .sale-toast-close:hover{background:rgba(34,49,92,0.16);}
+  @media (max-width:480px){
+    .sale-toast{ left:12px; width:auto; max-width:calc(100% - 24px); padding:12px 14px; }
+  }
 </style>
 </head>
 <body>
@@ -1358,8 +1439,8 @@
       <p class="footer-note">Paket buku aktivitas digital untuk anak usia 3–7 tahun — mewarnai, menggambar, berhitung, menggunting &amp; menempel.</p>
     </div>
     <div class="footer-bottom wrap" style="padding-left:0;padding-right:0;">
-      <span>© 2026 Kreatif.Kids</span>
-      <span>Produk digital PDF</span>
+      <span>© 2026 Kreatif.Kids. Semua hak dilindungi.</span>
+      <span>Produk digital · Bukan barang fisik</span>
     </div>
   </div>
 </footer>
@@ -1723,6 +1804,106 @@ const io = new IntersectionObserver((entries)=>{
   });
 }, {threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+</script>
+
+<!-- ---------- sale toast: notifikasi "baru saja membeli" ---------- -->
+<div id="saleToast" class="sale-toast" role="button" tabindex="0" aria-live="polite" aria-label="Notifikasi pembelian, klik untuk menuju bagian beli">
+  <span class="sale-toast-avatar" id="saleToastAvatar"></span>
+  <span class="sale-toast-body">
+    <span class="sale-toast-name">
+      <span id="saleToastName"></span>
+      <span class="mini-check" aria-hidden="true">
+        <svg width="8" height="8" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </span>
+    <span class="sale-toast-text" id="saleToastText"></span>
+    <span class="sale-toast-time" id="saleToastTime"></span>
+  </span>
+  <button type="button" class="sale-toast-close" id="saleToastClose" aria-label="Tutup notifikasi">✕</button>
+</div>
+
+<script>
+(function(){
+  const toast = document.getElementById('saleToast');
+  if(!toast) return;
+
+  // ---- GANTI dengan data pembeli asli Anda (nama depan/inisial + kota) ----
+  // Disarankan memakai data pembelian nyata (mis. dari riwayat checkout),
+  // bukan nama rekaan, agar notifikasi ini tetap jujur ke pengunjung.
+  const SALE_EVENTS = [
+    { name:'Rina',   city:'Bandung',    time:'3 menit lalu'  },
+    { name:'Dimas',  city:'Surabaya',   time:'7 menit lalu'  },
+    { name:'Wulan',  city:'Yogyakarta', time:'12 menit lalu' },
+    { name:'Fajar',  city:'Bekasi',     time:'5 menit lalu'  },
+    { name:'Sari',   city:'Medan',      time:'9 menit lalu'  },
+    { name:'Putri',  city:'Semarang',   time:'2 menit lalu'  },
+    { name:'Yoga',   city:'Makassar',   time:'15 menit lalu' },
+    { name:'Melati', city:'Denpasar',   time:'6 menit lalu'  }
+  ];
+  const ACTION_TEXT = 'baru saja membeli Paket 12 Worksheet';
+  const AVATAR_COLORS = ['var(--red)','var(--blue)','var(--green)','var(--purple)','var(--pink)','var(--teal)','var(--orange)','var(--indigo)'];
+
+  const nameEl   = document.getElementById('saleToastName');
+  const textEl   = document.getElementById('saleToastText');
+  const timeEl   = document.getElementById('saleToastTime');
+  const avatarEl = document.getElementById('saleToastAvatar');
+  const closeBtn = document.getElementById('saleToastClose');
+
+  let order = [];
+  let stopped = false;
+  let hideTimer = null;
+  let nextTimer = null;
+
+  function shuffledOrder(){
+    const arr = SALE_EVENTS.map((_, i) => i);
+    for(let i = arr.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  function showNext(){
+    if(stopped) return;
+    if(order.length === 0) order = shuffledOrder();
+    const idx = order.shift();
+    const ev = SALE_EVENTS[idx];
+
+    nameEl.textContent = ev.name + ' · ' + ev.city;
+    textEl.textContent = ACTION_TEXT;
+    timeEl.textContent = ev.time;
+    avatarEl.textContent = ev.name.charAt(0).toUpperCase();
+    avatarEl.style.background = AVATAR_COLORS[idx % AVATAR_COLORS.length];
+
+    toast.classList.add('show');
+
+    hideTimer = setTimeout(()=>{
+      toast.classList.remove('show');
+      nextTimer = setTimeout(showNext, 9000 + Math.random() * 6000);
+    }, 5000);
+  }
+
+  function goToCheckout(){
+    const target = document.getElementById('beli');
+    if(target) target.scrollIntoView({behavior:'smooth'});
+  }
+
+  toast.addEventListener('click', goToCheckout);
+  toast.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); goToCheckout(); }
+  });
+
+  closeBtn.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    stopped = true;
+    clearTimeout(hideTimer);
+    clearTimeout(nextTimer);
+    toast.classList.remove('show');
+  });
+
+  // Notifikasi pertama muncul setelah beberapa detik agar tidak mengganggu saat halaman baru dibuka.
+  setTimeout(showNext, 4000);
+})();
 </script>
 
 </body></html>
