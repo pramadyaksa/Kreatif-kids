@@ -613,20 +613,26 @@
   .bonus-carousel-wrap{
     max-width:380px;
     margin:0 auto;
-  }
-  .bonus-carousel-wrap .series-carousel{
     background:var(--card);
     border-radius:var(--radius-md);
+    overflow:hidden;
     box-shadow:var(--shadow-card);
     border:2px solid rgba(34,49,92,0.06);
     transition:transform .22s ease, box-shadow .22s ease;
   }
-  .bonus-carousel-wrap .series-carousel:hover{
+  .bonus-carousel-wrap:hover{
     transform:translateY(-5px);
     box-shadow:var(--shadow-soft);
   }
   .bonus-carousel-wrap .series-carousel-viewport{
     aspect-ratio:2/3;
+  }
+  .bonus-carousel-wrap h3{
+    font-size:0.98rem;
+    margin-top:4px;
+    margin-bottom:0;
+    font-family:'Plus Jakarta Sans', sans-serif;
+    font-weight:800;
   }
   @media (max-width:480px){
     .bonus-carousel-wrap{max-width:300px;}
@@ -1181,6 +1187,10 @@
               </div>
             </div>
           </div>
+          <div class="series-card-body">
+            <div class="series-card-index" data-bonus-index>BONUS</div>
+            <h3 data-bonus-title>Excel Planner Biaya Pendidikan Anak</h3>
+          </div>
         </div>
       </div>
     </div>
@@ -1589,6 +1599,19 @@ document.querySelectorAll('.series-carousel').forEach(carousel=>{
   let index = 0;
   let timer = null;
 
+  // Carousel bonus: judul di series-card-body ikut berganti sesuai slide aktif,
+  // diambil dari alt text tiap gambar (prefix "Bonus " dibuang).
+  const isBonus = carousel.dataset.carousel === 'bonus';
+  const bonusIndexEl = isBonus ? carousel.closest('.bonus-carousel-wrap').querySelector('[data-bonus-index]') : null;
+  const bonusTitleEl = isBonus ? carousel.closest('.bonus-carousel-wrap').querySelector('[data-bonus-title]') : null;
+  const updateBonusBody = (i)=>{
+    if(!isBonus) return;
+    const img = slides[i] && slides[i].querySelector('img');
+    const label = img ? img.alt.replace(/^Bonus\s*/i, '') : '';
+    if(bonusIndexEl) bonusIndexEl.textContent = `BONUS ${String(i + 1).padStart(2,'0')}/${slides.length}`;
+    if(bonusTitleEl) bonusTitleEl.textContent = label;
+  };
+
   // Muat gambar slide hanya saat dibutuhkan (src asli disimpan di data-src).
   // Sebelumnya seluruh 5-6 gambar tiap carousel langsung dipasang src-nya,
   // jadi begitu carousel masuk area lazy-load browser, semuanya ikut kebawa
@@ -1608,6 +1631,7 @@ document.querySelectorAll('.series-carousel').forEach(carousel=>{
     dots.forEach((dot,i)=>dot.classList.toggle('active', i === index));
     loadSlide(index);
     loadSlide((index + 1) % slides.length); // preload 1 slide di depan biar transisi mulus
+    updateBonusBody(index);
   };
 
   const stop = ()=>{ if(timer){ clearInterval(timer); timer=null; } };
